@@ -19,5 +19,7 @@ public class AuthToken {
 		this.creationData = System.currentTimeMillis();
 		this.expirationData = this.creationData + EXPIRATION_TIME;
 	}
-	
+
+
+
 }
