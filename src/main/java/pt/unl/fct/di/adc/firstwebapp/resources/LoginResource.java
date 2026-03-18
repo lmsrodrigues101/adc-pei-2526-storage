@@ -55,7 +55,10 @@ public class LoginResource {
 	 * Logger Object
 	 */
 	private static final Logger LOG = Logger.getLogger(LoginResource.class.getName());
-	private static final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+	private static final Datastore datastore = DatastoreOptions.newBuilder()
+			.setProjectId("my-adc-app-489314")
+			.build()
+			.getService();
 	private static final KeyFactory userKeyFactory = datastore.newKeyFactory().setKind("User");
 
 	private final Gson g = new Gson();
