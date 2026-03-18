@@ -21,15 +21,15 @@ import com.google.gson.Gson;
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class LoginResource {
 
-	/** 
+	/**
 	 * Logger Object
 	 */
 	private static final Logger LOG = Logger.getLogger(LoginResource.class.getName());
 
 	private final Gson g = new Gson();
-	
+
 	public LoginResource() {} // Nothing to be done here
-	
+
 	@POST
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -42,9 +42,9 @@ public class LoginResource {
 		}
 
 		return Response.status(Response.Status.FORBIDDEN).entity("Incorrect username or password.").build();
-		
+
 	}
-	
+
 	@GET
 	@Path("/{username}")
 	public Response checkUsernameAvailable(@PathParam("username") String username) {
