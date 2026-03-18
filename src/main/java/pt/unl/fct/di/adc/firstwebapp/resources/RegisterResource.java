@@ -24,7 +24,10 @@ import pt.unl.fct.di.adc.firstwebapp.util.LoginData;
 public class RegisterResource {
 
     private static final Logger LOG = Logger.getLogger(RegisterResource.class.getName());
-    private static final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    private static final Datastore datastore = DatastoreOptions.newBuilder()
+            .setProjectId("my-adc-app-489314")
+            .build()
+            .getService();
 
     private final Gson g = new Gson();
 
